@@ -1,38 +1,38 @@
 // Name: Dominic Wrtaza
 // Date: 9/20/2024
-// File Purpose: To perfrom the Fibonacci sequence
+// File Purpose: To perform the Fibonacci sequence
 #include <stdio.h>
 #include <stdlib.h>
 
 #define MAX_SIZE 1000
 
-unsigned long int fib_i_core(unsigned long int n);
-unsigned long int fib_r_core(unsigned long int n);
+unsigned long int fib_i_core(unsigned long int num);
+unsigned long int fib_r_core(unsigned long int num);
 
 unsigned long int memo[MAX_SIZE];
 
 void init_memo() {
-  for (unsigned long int i = 0; i < MAX_SIZE; i++) {
-    memo[i] = 0;
-  }
+    for (unsigned long int idx = 0; idx < MAX_SIZE; idx++) {
+        memo[idx] = 0;
+    }
 }
 
-unsigned long int fibonacci_iterative(unsigned long int n) {
-  if (memo[n] != 0) {
-    return memo[n];
-  }
-  unsigned long int result = fib_i_core(n);
-  memo[n] = result;
-  return result;
+unsigned long int fibonacci_iterative(unsigned long int num) {
+    if (memo[num] != 0) {
+        return memo[num];
+    }
+    unsigned long int result = fib_i_core(num);
+    memo[num] = result;
+    return result;
 }
 
-unsigned long int fibonacci_recursive(unsigned long int n) {
-  if (memo[n] != 0) {
-    return memo[n];
-  }
-  unsigned long int result = fib_r_core(n);
-  memo[n] = result;
-  return result;
+unsigned long int fibonacci_recursive(unsigned long int num) {
+    if (memo[num] != 0) {
+        return memo[num];
+    }
+    unsigned long int result = fib_r_core(num);
+    memo[num] = result;
+    return result;
 }
 
 unsigned long int fib_i_core(unsigned long int n) {
